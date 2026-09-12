@@ -16,8 +16,11 @@ import Unauthorized from "../pages/public/Unauthorized";
 
 import CategoryServices from "../pages/public/CategoryServices";
 
-import CustomerDashboard from "../pages/customer/CustomerDashboard";
 import ProviderDashboard from "../pages/provider/ProviderDashboard";
+import CreateService from "../pages/provider/CreateService";
+import MyServices from "../pages/provider/MyServices";
+
+import CustomerDashboard from "../pages/customer/CustomerDashboard";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 
 import ProtectedRoute from "./ProtectedRoute";
@@ -52,6 +55,11 @@ const AppRoutes = () => {
         <Route element={<ProtectedRoute allowedRoles={["provider"]} />}>
           <Route element={<ProviderLayout />}>
             <Route path="/provider/dashboard" element={<ProviderDashboard />} />
+            <Route path="/provider/services" element={<MyServices />} />
+            <Route
+              path="/provider/services/create"
+              element={<CreateService />}
+            />
           </Route>
         </Route>
 
